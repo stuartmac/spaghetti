@@ -1,1 +1,4 @@
+# TODO: Add decoy text (like this :-) )
+# TODO: Mix absolute and relative paths
+# TODO: Test valid and invalid paths (wrt existence)
 foo.txt
