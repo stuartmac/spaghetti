@@ -1,3 +1,5 @@
+import re
+
 import networkx as nx
 
 
@@ -17,10 +19,12 @@ class Spaghetti:
         self.build_graph()
 
     def find_file_references(self):
+        regex = re.compile('.*\.txt')  # TODO: parametrise and generalise the regex
         for path in self.paths:
             with open(path, 'r') as file:
-                # will update to self.filerefs
-                pass
+                matches = (regex.findall(line) for line in file)
+                for crossref in matches:
+                    self.filerefs[path].extend(crossref)
 
     def build_graph(self):
         for path, crossrefs in self.filerefs.items():
