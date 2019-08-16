@@ -6,7 +6,7 @@ from spaghetti import Spaghetti
 
 
 class TwoFileGraphTestCase(unittest.TestCase):
-    def test_two_file_graph(self):
+    def test_two_file_graph_adjacency(self):
         # example files should resolve to foo.txt <-> bar.txt
         expected_graph = nx.DiGraph()
         expected_graph.add_nodes_from(['foo.txt', 'bar.txt'])
