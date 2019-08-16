@@ -30,6 +30,11 @@ class TwoFileGraphTestCase(unittest.TestCase):
 
         self.assertCountEqual(expected_graph.nodes, calculated_graph.nodes)
 
+    def test_two_file_spaghetti_crossrefs(self):
+        expected_crossrefs = {'foo.txt': ['bar.txt'], 'bar.txt': ['foo.txt']}
+        calculated_crossrefs = Spaghetti(['foo.txt', 'bar.txt']).filerefs
+        self.assertDictEqual(expected_crossrefs, calculated_crossrefs)
+
 
 if __name__ == '__main__':
     unittest.main()
