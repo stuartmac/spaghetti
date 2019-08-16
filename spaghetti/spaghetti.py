@@ -30,3 +30,4 @@ class Spaghetti:
         for path, crossrefs in self.filerefs.items():
             # Will update self.graph
             self.graph.add_node(path)
+            self.graph.add_edges_from([(ref, path) for ref in crossrefs])
