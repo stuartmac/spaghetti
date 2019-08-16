@@ -25,4 +25,4 @@ class Spaghetti:
     def build_graph(self):
         for path, crossrefs in self.filerefs.items():
             # Will update self.graph
-            pass
+            self.graph.add_node(path)
