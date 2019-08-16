@@ -1,1 +1,1 @@
-/path/to/bar.txt
+bar.txt
