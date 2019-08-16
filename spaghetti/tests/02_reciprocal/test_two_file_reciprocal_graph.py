@@ -20,6 +20,16 @@ class TwoFileGraphTestCase(unittest.TestCase):
         calculated_adjacency = list(calculated_graph.adjacency())
         self.assertCountEqual(expected_adjacency, calculated_adjacency)
 
+    def test_two_file_graph_nodes(self):
+        # example graph should have two nodes: foo.txt and bar.txt
+        expected_graph = nx.DiGraph()
+        expected_graph.add_nodes_from(['foo.txt', 'bar.txt'])
+
+        # calculate graph using spaghetti
+        calculated_graph = Spaghetti(['foo.txt', 'bar.txt']).graph
+
+        self.assertCountEqual(expected_graph.nodes, calculated_graph.nodes)
+
 
 if __name__ == '__main__':
     unittest.main()
