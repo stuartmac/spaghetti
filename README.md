@@ -25,3 +25,11 @@ corresponding its appearance frequency, equivalent cross references (e.g., absol
 relative) could each count as seperate edges, attributes could include things like 
 its immediate context (e.g., commented; then different contexts might lead to different
 edges)
+
+## API ideas
+
+- Spaghetti class that holds source files, cross references and cross reference graph and
+associated methods for constructing these data (e.g., parsing cross references and building
+the cross reference graph)
+- instantiation could take place with 0 or more source files and/ or regexes
+- should be able to update source files and regexes on demand and rebuild cross ref graph
