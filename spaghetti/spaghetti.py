@@ -17,6 +17,8 @@ class Spaghetti:
         self.graph = nx.DiGraph()
         self.find_file_references()
         self.build_graph()
+        
+    # TODO: Method for modifying the path (sources) list
 
     def find_file_references(self):
         regex = re.compile('.*\.txt')  # TODO: parametrise and generalise the regex
