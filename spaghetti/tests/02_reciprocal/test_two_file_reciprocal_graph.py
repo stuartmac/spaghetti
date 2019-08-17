@@ -34,6 +34,8 @@ class TwoFileGraphTestCase(unittest.TestCase):
         expected_crossrefs = {'foo.txt': ['bar.txt'], 'bar.txt': ['foo.txt']}
         calculated_crossrefs = Spaghetti(['foo.txt', 'bar.txt']).filerefs
         self.assertDictEqual(expected_crossrefs, calculated_crossrefs)
+        
+    # TODO: Add test to specify behaviour when a file cross references a file not in the instantiation list 
 
 
 if __name__ == '__main__':
